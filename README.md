@@ -4,13 +4,13 @@ A backend API for a cookbook built with Django REST Framework, Postgres and Dock
 
 ## Overview
 
-This application creates an online catalog for a personal cookbook for users to create, edit and view recipes sorted by their cooking time.
+This application creates an online catalog for a personal cookbook for users to create, edit and view recipes filtered by their cooking time.
 
 Currently the features are:
 * Models for recipe timings and recipes
 * Users can create timing categories
 * Users can add individual recipes
-* Users can view recipes as a list or in detail
+* Users can view recipes as a list, with an optional filtering on timing, or in detail
 * Users can edit and delete individual recipes
 * Built in Docker containers
 

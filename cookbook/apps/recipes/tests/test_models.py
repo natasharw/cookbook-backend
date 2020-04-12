@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.utils import timezone
-# from django.core.urlresolvers import reverse
 
 from ..models import Recipe, Timing
 
@@ -11,19 +10,16 @@ class TimingModelTest(TestCase):
     
     def test_title_label(self):
         timing = Timing.objects.get(title='all afternoon') 
-        # fix to use get(id=1)
         field_label = timing._meta.get_field('title').verbose_name
         self.assertEquals(field_label, 'title')
     
     def test_title_max_length(self):
         timing = Timing.objects.get(title='all afternoon')
-        # fix to use get(id=1)
         max_length = timing._meta.get_field('title').max_length
         self.assertEqual(max_length, 255)
 
     def test_object_name_is_title(self):
         timing = Timing.objects.get(title='all afternoon')
-        # fix to use get(id=1)
         expected_object_name = str(timing.title)
         self.assertEquals(expected_object_name, str(timing))
 

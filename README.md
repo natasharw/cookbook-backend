@@ -169,6 +169,7 @@ Content-Length: 61
 
 #### Delete a recipe
 <i>Request:</i>
+
 `DELETE /api/recipes/id` 
 
 ```

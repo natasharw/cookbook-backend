@@ -1,12 +1,17 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
+
+class Timing(models.Model):
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
 
 class Recipe(models.Model):
-    name = models.CharField(max_length=100)
-    time_category = models.CharField(max_length=100)
-    recipe_detail = models.CharField(max_length=1000, blank=True, null=True)
-    # owner = models.ForeignKey(User, related_name="recipes", on_delete=models.CASCADE, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=255)
+    owner = models.ForeignKey(User, related_name="recipes_owned", on_delete=models.CASCADE, null=True)
+    timing = models.ForeignKey(Timing, related_name='categories',on_delete=models.CASCADE)
+    detail = models.CharField(max_length=1000, blank=True, null=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.name

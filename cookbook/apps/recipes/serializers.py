@@ -19,3 +19,4 @@ class RecipeSerializer(serializers.ModelSerializer):
             'timing',
             'detail'
             )
+            
